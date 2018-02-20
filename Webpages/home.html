@@ -1,137 +1,285 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
-<title>Soccer Connect</title>
+    <meta charset="utf-8">
+    <title>
+        Two Football
+    </title>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1" name="viewport"/>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    </link>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js">
+    </script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js">
+    </script>
+    <link rel="stylesheet" type="text/css" href="../Stylesheets/style.css">
+    <script>
+        
 
- <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    </script>
 </head>
-
-</head>
+</html>
 <style>
-  nav
-{
-   position: fixed;
-   top: 0px;
-   width: 100%;
-}
-ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    background-color: #333;
-
-}
-
-li {
-    float: left;
-}
-
-li a {
-    display: block;
-    color: white;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-}
-
-li a:hover {
-    background-color: #111;
-}
 </style>
-
 <body>
-<section>
-	
-
-<nav align="center">
-	<ul>
-	<li><a href="">Home</a></li>
-  <li><a href="http://www.goal.com/en-us/transfer-news">Transfers</a></li>
-  <li><a href="https://www.youtube.com/watch?v=NuG1ci3CNUc">Highlights</a></li>
-  <li><a href="http://www.goal.com/en-us/live-scores">Matchday Live Ticker</a></li>
-  <li><a href="">Fantasy Football Tips</a></li>
-</ul>
+<nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#">
+                Two Football
+            </a>
+        </div>
+        <ul class="nav navbar-nav">
+            <li class="active">
+                <a href="#">
+                    Home
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    Transfers
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    Highlights
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    Upcoming Fixtures
+                </a>
+            </li>
+        </ul>
+        <form action="/action_page.php" class="navbar-form navbar-right">
+            <div class="input-group">
+                <input class="form-control" name="search" placeholder="Search clubs, players.." type="text" id="search-field">
+                <div class="input-group-btn">
+                    <button class="btn btn-default" type="submit">
+                        <i class="glyphicon glyphicon-search">
+                        </i>
+                    </button>
+                </div>
+                </input>
+            </div>
+        </form>
+    </div>
 </nav>
-
-
-<section style="padding:50px">
-	<h1 align='center' >Soccer Connect</h1>
+<section id='title'>
+    <div class="jumbotron">
+        <h1 align="center">
+            Two Football
+        </h1>
+        <h3 align="center">
+            Everything Soccer, Everything here.
+        </h3>
+    </div>
 </section>
-
-<section>
-	<h3 align="center">
-		Everything Soccer, Everything here.
-	</h3>
-</section>
-
 <div class="container">
-  <h2> Essentials </h2>
-  <div id="myCarousel" class="carousel slide" data-ride="carousel">
-    <!-- Indicators -->
-    <ol class="carousel-indicators">
-      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-      <li data-target="#myCarousel" data-slide-to="1"></li>
-      <li data-target="#myCarousel" data-slide-to="2"></li>
-    </ol>
-
-    <!-- Wrapper for slides -->
-    <div class="carousel-inner">
-
-      <div class="item active">
-        <img src="AnthonyM.jpg" alt="NA" style="width:100%;">
-        <div class="carousel-caption">
-          
-          <h3>MARTIAL A MAKEWEIGHT IN ALEXIS BID
-Manchester United are closing in on a move for Alexis Sanchez from Arsenal and could throw in Anthony Martial as part of a deal for the Chile international.</h3>
+    <h2>
+        Top Stories
+    </h2>
+    <div class="carousel slide" data-ride="carousel" id="myCarousel">
+        <!-- Indicators -->
+        <ol class="carousel-indicators">
+            <li class="active" data-slide-to="0" data-target="#myCarousel">
+            </li>
+            <li data-slide-to="1" data-target="#myCarousel">
+            </li>
+            <li data-slide-to="2" data-target="#myCarousel">
+            </li>
+        </ol>
+        <!-- Wrapper for slides -->
+        <div class="carousel-inner">
+            <div class="item active">
+                <img alt="NA" src="..\Images\AnthonyM.jpg" style="width:100%;">
+                <div class="carousel-caption">
+                    <h3>
+                        MARTIAL A MAKEWEIGHT IN ALEXIS BID
+                        Manchester United are closing in on a move for Alexis Sanchez from Arsenal and could throw in
+                        Anthony Martial as part of a deal for the Chile international.
+                    </h3>
+                </div>
+                </img>
+            </div>
+            <div class="item">
+                <img alt="NA" src="..\Images\liverpoolCity.jpg" style="width:100%;">
+                <div class="carousel-caption">
+                    <h3>
+                        Manchester City 1 Liverpool 4, match report: Calamity for City as Liverpool demolish them in
+                        their own backyard
+                    </h3>
+                    <p>
+                    </p>
+                </div>
+                </img>
+            </div>
+            <div class="item">
+                <img alt="New York" src="..\Images\realM.jpg " style="width:100%;">
+                <div class="carousel-caption">
+                    <h3>
+                        Gareth Bale given standing ovation as Real Madrid thrash Deportivo
+                    </h3>
+                    <p>
+                    </p>
+                </div>
+                </img>
+            </div>
         </div>
-      </div>
-
-      <div class="item">
-        <img src="liverpoolCity.jpg" alt="NA" style="width:100%;">
-        <div class="carousel-caption">
-          <h3>Manchester City 1 Liverpool 4, match report: Calamity for City as Liverpool demolish them in their own backyard</h3>
-          <p></p>
+        <!-- Left and right controls -->
+        <a class="left carousel-control" data-slide="prev" href="#myCarousel">
+                <span class="glyphicon glyphicon-chevron-left">
+                </span>
+            <span class="sr-only">
+                    Previous
+                </span>
+        </a>
+        <a class="right carousel-control" data-slide="next" href="#myCarousel">
+                <span class="glyphicon glyphicon-chevron-right">
+                </span>
+            <span class="sr-only">
+                    Next
+                </span>
+        </a>
+    </div>
+</div>
+<div class="container">
+    <h2>
+        Upcoming Fixtures
+    </h2>
+    <div class="carousel slide" data-ride="carousel" id="myCarousel">
+        <!-- Indicators -->
+        <ol class="carousel-indicators">
+            <li class="active" data-slide-to="0" data-target="#myCarousel">
+            </li>
+            <li data-slide-to="1" data-target="#myCarousel">
+            </li>
+            <li data-slide-to="2" data-target="#myCarousel">
+            </li>
+        </ol>
+        <!-- Wrapper for slides -->
+        <div class="carousel-inner">
+            <div class="item active">
+                <img alt="NA" src="..\Images\AnthonyM.jpg" style="width:100%;">
+                <div class="carousel-caption">
+                    <h3>
+                        MARTIAL A MAKEWEIGHT IN ALEXIS BID
+                        Manchester United are closing in on a move for Alexis Sanchez from Arsenal and could throw in
+                        Anthony Martial as part of a deal for the Chile international.
+                    </h3>
+                </div>
+                </img>
+            </div>
+            <div class="item">
+                <img alt="NA" src="..\Images\liverpoolCity.jpg" style="width:100%;">
+                <div class="carousel-caption">
+                    <h3>
+                        Manchester City 1 Liverpool 4, match report: Calamity for City as Liverpool demolish them in
+                        their own backyard
+                    </h3>
+                    <p>
+                    </p>
+                </div>
+                </img>
+            </div>
+            <div class="item">
+                <img alt="New York" src="..\Images\realM.jpg " style="width:100%;">
+                <div class="carousel-caption">
+                    <h3>
+                        Gareth Bale given standing ovation as Real Madrid thrash Deportivo
+                    </h3>
+                    <p>
+                    </p>
+                </div>
+                </img>
+            </div>
         </div>
-      </div>
-    
-      <div class="item">
-        <img src="realM.jpg " alt="New York" style="width:100%;">
-        <div class="carousel-caption">
-          <h3>Gareth Bale given standing ovation as Real Madrid thrash Deportivo</h3>
-          <p></p>
-        </div>
-      </div>
-  
+        <!-- Left and right controls -->
+        <a class="left carousel-control" data-slide="prev" href="#myCarousel">
+                <span class="glyphicon glyphicon-chevron-left">
+                </span>
+            <span class="sr-only">
+                    Previous
+                </span>
+        </a>
+        <a class="right carousel-control" data-slide="next" href="#myCarousel">
+                <span class="glyphicon glyphicon-chevron-right">
+                </span>
+            <span class="sr-only">
+                    Next
+                </span>
+        </a>
     </div>
 
-    <!-- Left and right controls -->
-    <a class="left carousel-control" href="#myCarousel" data-slide="prev">
-      <span class="glyphicon glyphicon-chevron-left"></span>
-      <span class="sr-only">Previous</span>
-    </a>
-    <a class="right carousel-control" href="#myCarousel" data-slide="next">
-      <span class="glyphicon glyphicon-chevron-right"></span>
-      <span class="sr-only">Next</span>
-    </a>
-  </div>
 </div>
+<div class="container">
+    <h2>
+        Fixture Results
+    </h2>
+    <div class="carousel slide" data-ride="carousel" id="myCarousel">
+        <!-- Indicators -->
+        <ol class="carousel-indicators">
+            <li class="active" data-slide-to="0" data-target="#myCarousel">
+            </li>
+            <li data-slide-to="1" data-target="#myCarousel">
+            </li>
+            <li data-slide-to="2" data-target="#myCarousel">
+            </li>
+        </ol>
+        <!-- Wrapper for slides -->
+        <div class="carousel-inner">
+            <div class="item active">
+                <img alt="NA" src="..\Images\AnthonyM.jpg" style="width:100%;">
+                <div class="carousel-caption">
+                    <h3>
+                        MARTIAL A MAKEWEIGHT IN ALEXIS BID
+                        Manchester United are closing in on a move for Alexis Sanchez from Arsenal and could throw in
+                        Anthony Martial as part of a deal for the Chile international.
+                    </h3>
+                </div>
+                </img>
+            </div>
+            <div class="item">
+                <img alt="NA" src="..\Images\liverpoolCity.jpg" style="width:100%;">
+                <div class="carousel-caption">
+                    <h3>
+                        Manchester City 1 Liverpool 4, match report: Calamity for City as Liverpool demolish them in
+                        their own backyard
+                    </h3>
+                    <p>
+                    </p>
+                </div>
+                </img>
+            </div>
+            <div class="item">
+                <img alt="New York" src="..\Images\realM.jpg " style="width:100%;">
+                <div class="carousel-caption">
+                    <h3>
+                        Gareth Bale given standing ovation as Real Madrid thrash Deportivo
+                    </h3>
+                    <p>
+                    </p>
+                </div>
+                </img>
+            </div>
+        </div>
+        <!-- Left and right controls -->
+        <a class="left carousel-control" data-slide="prev" href="#myCarousel">
+                <span class="glyphicon glyphicon-chevron-left">
+                </span>
+            <span class="sr-only">
+                    Previous
+                </span>
+        </a>
+        <a class="right carousel-control" data-slide="next" href="#myCarousel">
+                <span class="glyphicon glyphicon-chevron-right">
+                </span>
+            <span class="sr-only">
+                    Next
+                </span>
+        </a>
+    </div>
 
-<br>
-<section style="margin:0px 200px">
-	<h2>Upcoming Fixtures</h2>
-</section>
-
-<section>
-	<h2> Fixture Results</h2>
-</section>
-
-</section>
+</div>
 </body>
-
-</html>
