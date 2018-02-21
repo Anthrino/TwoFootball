@@ -19,16 +19,23 @@
         var data;
         function filter(query) {
             var dataList = document.getElementById("dropmenu");
-            dataList.innerHTML= "";
+            dataList.innerHTML = "";
+            var option = document.createElement("li");
+            option.className = "searchlist dropdown-item";
             $(data.list).each(function (i, item) {
-                var option = document.createElement("li");
-                option.className = "searchlist";
-                option.onclick = function(){ window.location=item.link; };
+                    if (item.title.indexOf(query) != -1) {
+                        option.onclick = function () {
+                            window.location = item.link;
+                        };
+                        option.innerHTML = item.title;
+                        dataList.appendChild(option);
+                    }
+                }
+            );
+            if (dataList.innerHTML == "") {
                 option.innerHTML = item.title;
                 dataList.appendChild(option);
-                console.log(dataList);
-
-            });
+            }
         }
         function getList() {
             var xmlhttp = new XMLHttpRequest();
@@ -40,6 +47,7 @@
             };
             xmlhttp.open("GET", "http://localhost:8000/Resources/search-list.json", true);
             xmlhttp.send();
+            console.log(data);
 
         }
 
@@ -48,7 +56,7 @@
 </html>
 <style>
 </style>
-<body>
+<body onload="getList();">
 <nav class="navbar navbar-inverse">
     <div class="container-fluid">
         <div class="navbar-header">
@@ -79,15 +87,17 @@
                 </a>
             </li>
         </ul>
-        <div class="navbar-form navbar-right">
-            <input class="form-control dropdown-toggle" name="search" placeholder="Search for clubs, players.."
-                   type="text"
-                   onfocus="getList()" onkeyup="filter(this.value)" id="search-field" data-toggle="dropdown">
+        <div class="navbar-form navbar-right has-feedback">
+            <input class="form-control dropdown-toggle" placeholder="Search for clubs, players.."
+                   type="text" onkeyup="filter(this.value)" onemptied="$('.dropdown-toggle').dropdown();"
+                   id="search-field" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-search form-control-feedback" style="margin-right: 10%; "></i>
+            <ul class="dropdown-menu" aria-labelledby="search-field" id="dropmenu">
+            </ul>
         </div>
-        <ul id="dropmenu" role="menu" aria-labelledby="menu1">
-        </ul>
     </div>
 </nav>
+
 <section id='title'>
     <div class="jumbotron">
         <h1 align="center">
