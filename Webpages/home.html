@@ -20,21 +20,29 @@
         function filter(query) {
             var dataList = document.getElementById("dropmenu");
             dataList.innerHTML = "";
-            var option = document.createElement("li");
-            option.className = "searchlist dropdown-item";
-            $(data.list).each(function (i, item) {
-                    if (item.title.indexOf(query) != -1) {
-                        option.onclick = function () {
-                            window.location = item.link;
-                        };
-                        option.innerHTML = item.title;
-                        dataList.appendChild(option);
+            if (query.length > 0) {
+                dataList.visibility = "visible";
+                $(data.list).each(function (i, item) {
+                        if (item.title.toLowerCase().indexOf(query) != -1) {
+                            var option = document.createElement("li");
+                            option.className = "searchlist dropdown-item";
+                            option.onclick = function () {
+                                window.location = item.link;
+                            };
+                            option.innerHTML = item.title;
+                            dataList.appendChild(option);
+                        }
                     }
+                );
+                if (dataList.innerHTML == "") {
+                    var option = document.createElement("li");
+                    option.className = "searchlist dropdown-item";
+                    option.innerHTML = "No results";
+                    dataList.appendChild(option);
                 }
-            );
-            if (dataList.innerHTML == "") {
-                option.innerHTML = item.title;
-                dataList.appendChild(option);
+            } else {
+                dataList.visibility = "hidden";
+
             }
         }
         function getList() {
@@ -89,8 +97,7 @@
         </ul>
         <div class="navbar-form navbar-right has-feedback">
             <input class="form-control dropdown-toggle" placeholder="Search for clubs, players.."
-                   type="text" onkeyup="filter(this.value)" onemptied="$('.dropdown-toggle').dropdown();"
-                   id="search-field" data-toggle="dropdown">
+                   type="text" onkeyup="filter(this.value)" id="search-field" data-toggle="dropdown">
             <i class="glyphicon glyphicon-search form-control-feedback" style="margin-right: 10%; "></i>
             <ul class="dropdown-menu" aria-labelledby="search-field" id="dropmenu">
             </ul>

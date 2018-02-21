@@ -4,7 +4,6 @@ body {
 
 nav {
     position: static;
-    top: 0px;
     width: 100%;
 }
 
@@ -12,18 +11,21 @@ nav {
     width: 200%;
     margin-left: -100%;
 }
-#dropmenu{
+
+#dropmenu {
     width: 50%;
     margin-right: 20%;
-    text-align: center;
+    background-color: #222;
 }
+
 .container {
     overflow: hidden;
 }
 
 .searchlist {
-    color: chartreuse;
+    color: limegreen;
     font-size: 15px;
     transition: 1s ease-in-out;
     cursor: pointer;
+    padding: 5%;
 }
