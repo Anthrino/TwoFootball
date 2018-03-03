@@ -26,7 +26,7 @@ nav {
     padding-top: 10%;
 }
 .searchlist {
-    color: limegreen;
+    color: c;
     font-size: 15px;
     transition: 1s ease-in-out;
     cursor: pointer;
