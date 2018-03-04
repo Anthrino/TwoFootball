@@ -22,11 +22,8 @@ nav {
     overflow: hidden;
 }
 
-.feedgrabbr_widget{
-    padding-top: 10%;
-}
 .searchlist {
-    color: c;
+    color: limegreen;
     font-size: 15px;
     transition: 1s ease-in-out;
     cursor: pointer;
