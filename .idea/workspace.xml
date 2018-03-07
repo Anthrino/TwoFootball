@@ -21,8 +21,13 @@
       <file leaf-file-name="home.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Webpages/home.php">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
             <state relative-caret-position="211">
               <caret line="185" column="0" lean-forward="false" selection-start-line="185" selection-start-column="0" selection-end-line="185" selection-end-column="0" />
+=======
+            <state relative-caret-position="4260">
+              <caret line="296" column="0" lean-forward="true" selection-start-line="296" selection-start-column="0" selection-end-line="296" selection-end-column="0" />
+>>>>>>> 1b535faaf792f2f1192940d9ac31420b638dd106
               <folding />
             </state>
           </provider>
@@ -62,7 +67,11 @@
         <entry file="file://$PROJECT_DIR$/Webpages/videos.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="0">
+<<<<<<< HEAD
               <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+=======
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="122" selection-end-column="7" />
+>>>>>>> 1b535faaf792f2f1192940d9ac31420b638dd106
               <folding />
             </state>
           </provider>
@@ -104,6 +113,11 @@
         <option value="$PROJECT_DIR$/Resources/style.css" />
         <option value="$PROJECT_DIR$/Webpages/fixtures.html" />
         <option value="$PROJECT_DIR$/Webpages/home.html" />
+<<<<<<< HEAD
+=======
+        <option value="$PROJECT_DIR$/Webpages/videos.html" />
+        <option value="$PROJECT_DIR$/Webpages/home.php" />
+>>>>>>> 1b535faaf792f2f1192940d9ac31420b638dd106
       </list>
     </option>
   </component>
@@ -290,12 +304,20 @@
       <workItem from="1519151823321" duration="17580000" />
       <workItem from="1519892159309" duration="2510000" />
       <workItem from="1519911319252" duration="6584000" />
+<<<<<<< HEAD
       <workItem from="1520065571591" duration="6567000" />
+=======
+      <workItem from="1520065571591" duration="7931000" />
+>>>>>>> 1b535faaf792f2f1192940d9ac31420b638dd106
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
+<<<<<<< HEAD
     <option name="totallyTimeSpent" value="39521000" />
+=======
+    <option name="totallyTimeSpent" value="40885000" />
+>>>>>>> 1b535faaf792f2f1192940d9ac31420b638dd106
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -452,8 +474,21 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Webpages/home.php">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="211">
           <caret line="185" column="0" lean-forward="false" selection-start-line="185" selection-start-column="0" selection-end-line="185" selection-end-column="0" />
+=======
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="122" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Webpages/home.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4260">
+          <caret line="296" column="0" lean-forward="true" selection-start-line="296" selection-start-column="0" selection-end-line="296" selection-end-column="0" />
+>>>>>>> 1b535faaf792f2f1192940d9ac31420b638dd106
           <folding />
         </state>
       </provider>

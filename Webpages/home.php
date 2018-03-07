@@ -115,83 +115,7 @@
     </div>
 </section>
 
-<div class="container">
-    <h2>
-        Top Stories
-    </h2>
-    <div class="carousel slide" data-ride="carousel" id="myCarousel">
-        <!-- Indicators -->
-        <ol class="carousel-indicators">
-            <li class="active" data-slide-to="0" data-target="#myCarousel">
-            </li>
-            <li data-slide-to="1" data-target="#myCarousel">
-            </li>
-            <li data-slide-to="2" data-target="#myCarousel">
-            </li>
-        </ol>
-        <!-- Wrapper for slides -->
-        <div class="carousel-inner">
-            <div class="item active">
-                <img alt="NA" src="../Images/AnthonyM.jpg" style="width:100%;">
-                <div class="carousel-caption">
-                    <h3 class="carhead">
-                        MARTIAL A MAKEWEIGHT IN ALEXIS BID
-                        Manchester United are closing in on a move for Alexis Sanchez from Arsenal and could throw in
-                        Anthony Martial as part of a deal for the Chile international.
-                    </h3>
-                </div>
-                </img>
-            </div>
-            <div class="item">
-                <img alt="NA" src="../Images/liverpoolCity.jpg" style="width:100%;">
-                <div class="carousel-caption">
-                    <h3 class="carhead">
-                        Manchester City 1 Liverpool 4, match report: Calamity for City as Liverpool demolish them in
-                        their own backyard
-                    </h3>
-                    <p>
-                    </p>
-                </div>
-                </img>
-            </div>
-            <div class="item">
-                <img alt="New York" src="../Images/realM.jpg " style="width:100%;">
-                <div class="carousel-caption">
-                    <h3 class="carhead">
-                        Gareth Bale given standing ovation as Real Madrid thrash Deportivo
-                    </h3>
-                    <p>
-                    </p>
-                </div>
-                </img>
-            </div>
-        </div>
-        <!-- Left and right controls -->
-        <a class="left carousel-control" data-slide="prev" href="#myCarousel">
-                <span class="glyphicon glyphicon-chevron-left">
-                </span>
-            <span class="sr-only">
-                    Previous
-                </span>
-        </a>
-        <a class="right carousel-control" data-slide="next" href="#myCarousel">
-                <span class="glyphicon glyphicon-chevron-right">
-                </span>
-            <span class="sr-only">
-                    Next
-                </span>
-        </a>
-    </div>
-</div>
-
-
-<br><br><hr>
-<div class="container">
-    <h2>
-        Standings
-    </h2>
-
-    <?php
+<?php
     $uri = 'https://newsapi.org/v2/top-headlines?sources=bbc-sport,fox-sports';
     // $uri = 'http://api.football-data.org/v1/competitions/354/fixtures/?matchday=22';
     // $uri = 'https://heisenbug-premier-league-live-scores-v1.p.mashape.com/api/premierleague/table';
@@ -203,8 +127,76 @@
     $stream_context = stream_context_create($reqPrefs);
     $response = file_get_contents($uri, false, $stream_context);
     $stories = json_decode($response)->articles;
-    $first = true;
-// $table = json_decode($response)->records;
+    $first = true; ?>
+
+<!-- Top Stories News API Carousel-->
+<div class="container" style=" width:85%; margin-bottom: 1%">
+    <h2>
+        Top Stories
+    </h2>
+    <div class="carousel slide" data-ride="carousel" id="myCarousel2">
+        <!-- Indicators -->
+        <ol class="carousel-indicators">
+            
+            <?php foreach ($stories as $index=>$entry): ?>
+                <?php if($first) {
+                    echo "<li class='active' data-slide-to='0' data-target='#myCarousel2'></li>";
+                    $first = false;
+                } else {
+                    echo "<li data-slide-to='$index' data-target='#myCarousel2'></li>";
+                }
+                ?>
+            <?php endforeach; $first = true; ?>
+        </ol>
+        <!-- Wrapper for slides -->
+        <div class="carousel-inner">
+        <?php foreach ($stories as $index=>$entry): ?>
+        <?php if ((strpos($entry->url, 'football') !== false || strpos($entry->url, 'soccer') !== false ) && $entry->urlToImage): ?>
+            <?php if($first) {
+                echo "<div class='item active'>";
+                $first = false;
+            } else {
+                echo "<div class='item'>";
+            }
+            ?>
+            <?php echo " <a href='$entry->url'>" ?>
+                <?php echo "<img alt='Loading..' src='$entry->urlToImage' style='width:100%;'>" ?>
+                <div class="carousel-caption">
+                    <h3>
+                        <?php echo $entry->description ?>
+                    </h3>
+                </div>
+                </img>
+            </a>
+            </div>
+        <?php endif; ?>
+        <?php endforeach; ?>
+        </div>
+
+        <!-- Left and right controls -->
+        <a class="left carousel-control" data-slide="prev" href="#myCarousel2">
+            <span class="glyphicon glyphicon-chevron-left"></span>
+            <span class="sr-only">
+                    Previous
+            </span>
+        </a>
+        <a class="right carousel-control" data-slide="next" href="#myCarousel2">
+            <span class="glyphicon glyphicon-chevron-right"></span>
+            <span class="sr-only">
+                Next
+            </span>
+        </a>
+    </div>
+</div>
+
+<br><br><hr>
+<div class="container">
+    <h2>
+        Standings
+    </h2>
+
+    <?php 
+    // $table = json_decode($response)->records;
     
     // foreach($table as $entry)
     // {
@@ -247,66 +239,79 @@
     //     echo "</table>";
     // }
     ?>
-
 </div>
 
 <br><br><hr>
 
-<div class="container" style=" width:85%; margin-bottom: 1%">
+
+<!-- TOP Stories OG Carousel - Uncomment if required -->
+<!-- <div class="container">
     <h2>
         Top Stories
     </h2>
-    <div class="carousel slide" data-ride="carousel" id="myCarousel2">
+    <div class="carousel slide" data-ride="carousel" id="myCarousel">
         <!-- Indicators -->
-        <ol class="carousel-indicators">
-            
-            <?php foreach ($stories as $index=>$entry): ?>
-                <?php if($first) {
-                    echo "<li class='active' data-slide-to='0' data-target='#myCarousel2'></li>";
-                    $first = false;
-                } else {
-                    echo "<li data-slide-to='$index' data-target='#myCarousel2'></li>";
-                }
-                ?>
-            <?php endforeach; $first = true; ?>
-        </ol>
+        <!-- <ol class="carousel-indicators">
+            <li class="active" data-slide-to="0" data-target="#myCarousel">
+            </li>
+            <li data-slide-to="1" data-target="#myCarousel">
+            </li>
+            <li data-slide-to="2" data-target="#myCarousel">
+            </li>
+        </ol> -->
         <!-- Wrapper for slides -->
-        <div class="carousel-inner">
-        <?php foreach ($stories as $index=>$entry): ?>
-        <?php if ((strpos($entry->url, 'football') !== false || strpos($entry->url, 'soccer') !== false ) && $entry->urlToImage): ?>
-            <?php if($first) {
-                echo "<div class='item active'>";
-                $first = false;
-            } else {
-                echo "<div class='item'>";
-            }
-            ?>
-                <?php echo "<img alt='Loading..' src='$entry->urlToImage' style='width:100%;'>" ?>
+        <!-- <div class="carousel-inner">
+            <div class="item active">
+                <img alt="NA" src="../Images/AnthonyM.jpg" style="width:100%;">
                 <div class="carousel-caption">
-                    <h3>
-                        <?php echo $entry->description ?>
+                    <h3 class="carhead">
+                        MARTIAL A MAKEWEIGHT IN ALEXIS BID
+                        Manchester United are closing in on a move for Alexis Sanchez from Arsenal and could throw in
+                        Anthony Martial as part of a deal for the Chile international.
                     </h3>
                 </div>
                 </img>
             </div>
-        <?php endif; ?>
-        <?php endforeach; ?>
-        </div>
-
+            <div class="item">
+                <img alt="NA" src="../Images/liverpoolCity.jpg" style="width:100%;">
+                <div class="carousel-caption">
+                    <h3 class="carhead">
+                        Manchester City 1 Liverpool 4, match report: Calamity for City as Liverpool demolish them in
+                        their own backyard
+                    </h3>
+                    <p>
+                    </p>
+                </div>
+                </img>
+            </div>
+            <div class="item">
+                <img alt="New York" src="../Images/realM.jpg " style="width:100%;">
+                <div class="carousel-caption">
+                    <h3 class="carhead">
+                        Gareth Bale given standing ovation as Real Madrid thrash Deportivo
+                    </h3>
+                    <p>
+                    </p>
+                </div>
+                </img>
+            </div>
+        </div> -->
         <!-- Left and right controls -->
-        <a class="left carousel-control" data-slide="prev" href="#myCarousel2">
-            <span class="glyphicon glyphicon-chevron-left"></span>
+        <!-- <a class="left carousel-control" data-slide="prev" href="#myCarousel">
+                <span class="glyphicon glyphicon-chevron-left">
+                </span>
             <span class="sr-only">
                     Previous
-            </span>
+                </span>
         </a>
-        <a class="right carousel-control" data-slide="next" href="#myCarousel2">
-            <span class="glyphicon glyphicon-chevron-right"></span>
+        <a class="right carousel-control" data-slide="next" href="#myCarousel">
+                <span class="glyphicon glyphicon-chevron-right">
+                </span>
             <span class="sr-only">
-                Next
-            </span>
+                    Next
+                </span>
         </a>
     </div>
+</div> -->
 
-</div>
 </body>
