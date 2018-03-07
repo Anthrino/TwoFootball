@@ -96,7 +96,7 @@
         </ul>
         <div class="navbar-form navbar-right has-feedback">
             <input class="form-control dropdown-toggle" placeholder="Search for clubs, players.."
-                   type="text" onkeyup="filter(this.entry)" id="search-field" data-toggle="dropdown">
+                   type="text" onkeyup="filter(this.value)" id="search-field" data-toggle="dropdown">
             <i class="glyphicon glyphicon-search form-control-feedback" style="margin-right: 10%; "></i>
             <ul class="dropdown-menu" aria-labelledby="search-field" id="dropmenu">
             </ul>
@@ -130,7 +130,7 @@
     $first = true; ?>
 
 <!-- Top Stories News API Carousel-->
-<div class="container" style=" width:85%; margin-bottom: 1%">
+<div class="container" style="margin-bottom: 1%">
     <h2>
         Top Stories
     </h2>
