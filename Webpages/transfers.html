@@ -13,7 +13,45 @@
 </head>
 
 <body>
-
+<nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="" style="display: inline; background-color: darkgreen; color: whitesmoke">
+                <img src="../Images/icon.png" style="display: inline; padding: 1%" height="20" width="20"/>
+                TwoFootball
+            </a>
+        </div>
+        <ul class="nav navbar-nav">
+            <li class="active">
+                <a href="#">
+                    Home
+                </a>
+            </li>
+            <li>
+                <a href="./transfers.html">
+                    Transfers
+                </a>
+            </li>
+            <li>
+                <a href="./news.html">
+                    News
+                </a>
+            </li>
+            <li>
+                <a href="videos.html">
+                    Upcoming Fixtures
+                </a>
+            </li>
+        </ul>
+        <div class="navbar-form navbar-right has-feedback">
+            <input class="form-control dropdown-toggle" placeholder="Search for clubs, players.."
+                   type="text" onkeyup="filter(this.value)" id="search-field" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-search form-control-feedback" style="margin-right: 10%; "></i>
+            <ul class="dropdown-menu" aria-labelledby="search-field" id="dropmenu">
+            </ul>
+        </div>
+    </div>
+</nav>
 	<?php
 $servername = "remote-rds.cks1ufcqz3ra.us-west-2.rds.amazonaws.com";
 $username = "admin";
