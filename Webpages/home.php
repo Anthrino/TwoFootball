@@ -52,7 +52,7 @@
                     data = JSON.parse(xmlhttp.responseText);
                 }
             };
-            xmlhttp.open("GET", "http://localhost:8000/Resources/search-list.json", true);
+            xmlhttp.open("GET", "../Resources/search-list.json", true);
             xmlhttp.send();
             console.log(data);
 
@@ -96,7 +96,7 @@
         </ul>
         <div class="navbar-form navbar-right has-feedback">
             <input class="form-control dropdown-toggle" placeholder="Search for clubs, players.."
-                   type="text" onkeyup="filter(this.value)" id="search-field" data-toggle="dropdown">
+                   type="text" onkeyup="filter(this.entry)" id="search-field" data-toggle="dropdown">
             <i class="glyphicon glyphicon-search form-control-feedback" style="margin-right: 10%; "></i>
             <ul class="dropdown-menu" aria-labelledby="search-field" id="dropmenu">
             </ul>
@@ -114,6 +114,7 @@
         </h3>
     </div>
 </section>
+
 <div class="container">
     <h2>
         Top Stories
@@ -182,140 +183,128 @@
         </a>
     </div>
 </div>
+
+
+<br><br><hr>
 <div class="container">
     <h2>
-        Upcoming Fixtures
+        Standings
     </h2>
-    <div class="carousel slide" data-ride="carousel" id="myCarousel">
-        <!-- Indicators -->
-        <ol class="carousel-indicators">
-            <li class="active" data-slide-to="0" data-target="#myCarousel">
-            </li>
-            <li data-slide-to="1" data-target="#myCarousel">
-            </li>
-            <li data-slide-to="2" data-target="#myCarousel">
-            </li>
-        </ol>
-        <!-- Wrapper for slides -->
-        <div class="carousel-inner">
-            <div class="item active">
-                <img alt="NA" src="../Images/AnthonyM.jpg" style="width:100%;">
-                <div class="carousel-caption">
-                    <h3>
-                        MARTIAL A MAKEWEIGHT IN ALEXIS BID
-                        Manchester United are closing in on a move for Alexis Sanchez from Arsenal and could throw in
-                        Anthony Martial as part of a deal for the Chile international.
-                    </h3>
-                </div>
-                </img>
-            </div>
-            <div class="item">
-                <img alt="NA" src="../Images/liverpoolCity.jpg" style="width:100%;">
-                <div class="carousel-caption">
-                    <h3>
-                        Manchester City 1 Liverpool 4, match report: Calamity for City as Liverpool demolish them in
-                        their own backyard
-                    </h3>
-                    <p>
-                    </p>
-                </div>
-                </img>
-            </div>
-            <div class="item">
-                <img alt="New York" src="../Images/realM.jpg " style="width:100%;">
-                <div class="carousel-caption">
-                    <h3>
-                        Gareth Bale given standing ovation as Real Madrid thrash Deportivo
-                    </h3>
-                    <p>
-                    </p>
-                </div>
-                </img>
-            </div>
-        </div>
-        <!-- Left and right controls -->
-        <a class="left carousel-control" data-slide="prev" href="#myCarousel">
-                <span class="glyphicon glyphicon-chevron-left">
-                </span>
-            <span class="sr-only">
-                    Previous
-                </span>
-        </a>
-        <a class="right carousel-control" data-slide="next" href="#myCarousel">
-                <span class="glyphicon glyphicon-chevron-right">
-                </span>
-            <span class="sr-only">
-                    Next
-                </span>
-        </a>
-    </div>
+
+    <?php
+    $uri = 'https://newsapi.org/v2/top-headlines?sources=bbc-sport,fox-sports';
+    // $uri = 'http://api.football-data.org/v1/competitions/354/fixtures/?matchday=22';
+    // $uri = 'https://heisenbug-premier-league-live-scores-v1.p.mashape.com/api/premierleague/table';
+    $reqPrefs['http']['method'] = 'GET';
+    $reqPrefs['http']['header'] = "X-Api-Key: 361f413451a94b009d6d23bd194a4d97";
+    // $reqPrefs['http']['header'] = "X-Auth-Token: 768e4dd9e5424d79bdefb3e535eb5136";
+    // $reqPrefs['http']['header'] = "X-Mashape-Key: zLeZWhIQJYmshzdjfEBZvqfjLFyjp1T4gBAjsn9wQr92HMxkU0";
+    // $reqPrefs['http']['header'] = "Accept: application/json";
+    $stream_context = stream_context_create($reqPrefs);
+    $response = file_get_contents($uri, false, $stream_context);
+    $stories = json_decode($response)->articles;
+    $first = true;
+// $table = json_decode($response)->records;
+    
+    // foreach($table as $entry)
+    // {
+    // echo $entry->team . '<br>';
+    // echo $entry->points . '<br>';
+    // }
+
+    // if (count($table) > 0) {
+    //     echo '<table class="table table-striped">';
+    //     echo'<thead class="thead-dark">';
+    //     echo'<tr>';
+    //     echo  '<th scope="col">#</th>';
+    //     echo  '<th scope="col">Team</th>';
+    //     echo  '<th scope="col">Played</th>';
+    //     echo  '<th scope="col">Won</th>';
+    //     echo  '<th scope="col">Drawn</th>';
+    //     echo  '<th scope="col">Lost</th>';
+    //     echo  '<th scope="col">Goals For</th>';
+    //     echo  '<th scope="col">Goals Against</th>';
+    //     echo  '<th scope="col">Points</th>';
+    //     echo'</tr>';
+    //     echo'</thead>';
+    //     echo'<tbody>';
+
+    //     foreach ($table as $index=>$entry) {
+
+    //         echo "<tr>";
+    //         echo "<td>$index</td>";
+    //         echo "<td>$entry->team</td>";
+    //         echo "<td>$entry->played</td>";
+    //         echo "<td>$entry->win</td>";
+    //         echo "<td>$entry->draw</td>";
+    //         echo "<td>$entry->loss</td>";
+    //         echo "<td>$entry->goalsFor</td>";
+    //         echo "<td>$entry->goalsAgainst</td>";
+    //         echo "<td>$entry->points</td>";
+    //         echo "</tr>";
+    //     }
+    //     echo"</tbody>";
+    //     echo "</table>";
+    // }
+    ?>
 
 </div>
-<div class="container">
+
+<br><br><hr>
+
+<div class="container" style=" width:85%; margin-bottom: 1%">
     <h2>
-        Fixture Results
+        Top Stories
     </h2>
-    <div class="carousel slide" data-ride="carousel" id="myCarousel">
+    <div class="carousel slide" data-ride="carousel" id="myCarousel2">
         <!-- Indicators -->
         <ol class="carousel-indicators">
-            <li class="active" data-slide-to="0" data-target="#myCarousel">
-            </li>
-            <li data-slide-to="1" data-target="#myCarousel">
-            </li>
-            <li data-slide-to="2" data-target="#myCarousel">
-            </li>
+            
+            <?php foreach ($stories as $index=>$entry): ?>
+                <?php if($first) {
+                    echo "<li class='active' data-slide-to='0' data-target='#myCarousel2'></li>";
+                    $first = false;
+                } else {
+                    echo "<li data-slide-to='$index' data-target='#myCarousel2'></li>";
+                }
+                ?>
+            <?php endforeach; $first = true; ?>
         </ol>
         <!-- Wrapper for slides -->
         <div class="carousel-inner">
-            <div class="item active">
-                <img alt="NA" src="../Images/AnthonyM.jpg" style="width:100%;">
+        <?php foreach ($stories as $index=>$entry): ?>
+        <?php if ((strpos($entry->url, 'football') !== false || strpos($entry->url, 'soccer') !== false ) && $entry->urlToImage): ?>
+            <?php if($first) {
+                echo "<div class='item active'>";
+                $first = false;
+            } else {
+                echo "<div class='item'>";
+            }
+            ?>
+                <?php echo "<img alt='Loading..' src='$entry->urlToImage' style='width:100%;'>" ?>
                 <div class="carousel-caption">
                     <h3>
-                        MARTIAL A MAKEWEIGHT IN ALEXIS BID
-                        Manchester United are closing in on a move for Alexis Sanchez from Arsenal and could throw in
-                        Anthony Martial as part of a deal for the Chile international.
+                        <?php echo $entry->description ?>
                     </h3>
                 </div>
                 </img>
             </div>
-            <div class="item">
-                <img alt="NA" src="../Images/liverpoolCity.jpg" style="width:100%;">
-                <div class="carousel-caption">
-                    <h3>
-                        Manchester City 1 Liverpool 4, match report: Calamity for City as Liverpool demolish them in
-                        their own backyard
-                    </h3>
-                    <p>
-                    </p>
-                </div>
-                </img>
-            </div>
-            <div class="item">
-                <img alt="New York" src="../Images/realM.jpg " style="width:100%;">
-                <div class="carousel-caption">
-                    <h3>
-                        Gareth Bale given standing ovation as Real Madrid thrash Deportivo
-                    </h3>
-                    <p>
-                    </p>
-                </div>
-                </img>
-            </div>
+        <?php endif; ?>
+        <?php endforeach; ?>
         </div>
+
         <!-- Left and right controls -->
-        <a class="left carousel-control" data-slide="prev" href="#myCarousel">
-                <span class="glyphicon glyphicon-chevron-left">
-                </span>
+        <a class="left carousel-control" data-slide="prev" href="#myCarousel2">
+            <span class="glyphicon glyphicon-chevron-left"></span>
             <span class="sr-only">
                     Previous
-                </span>
+            </span>
         </a>
-        <a class="right carousel-control" data-slide="next" href="#myCarousel">
-                <span class="glyphicon glyphicon-chevron-right">
-                </span>
+        <a class="right carousel-control" data-slide="next" href="#myCarousel2">
+            <span class="glyphicon glyphicon-chevron-right"></span>
             <span class="sr-only">
-                    Next
-                </span>
+                Next
+            </span>
         </a>
     </div>
 
