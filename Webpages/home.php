@@ -7,6 +7,7 @@
     </title>
     <link rel="shortcut icon" href="../Images/icon.png"/>
     <link rel="stylesheet" type="text/css" href="../Resources/style.css"/>
+    <script src="../Resources/search-engine.js"></script>
     <meta charset="utf-8"/>
     <meta content="width=device-width, initial-scale=1" name="viewport"/>
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"/>
@@ -14,56 +15,11 @@
     </script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js">
     </script>
-    <script>
-        var data;
-        function filter(query) {
-            var dataList = document.getElementById("dropmenu");
-            dataList.innerHTML = "";
-            if (query.length > 0) {
-                dataList.visibility = "visible";
-                $(data.list).each(function (i, item) {
-                        if (item.title.toLowerCase().indexOf(query) != -1) {
-                            var option = document.createElement("li");
-                            option.className = "searchlist dropdown-item";
-                            option.onclick = function () {
-                                window.location = item.link;
-                            };
-                            option.innerHTML = item.title;
-                            dataList.appendChild(option);
-                        }
-                    }
-                );
-                if (dataList.innerHTML == "") {
-                    var option = document.createElement("li");
-                    option.className = "searchlist dropdown-item";
-                    option.innerHTML = "No results";
-                    dataList.appendChild(option);
-                }
-            } else {
-                dataList.visibility = "hidden";
-
-            }
-        }
-        function getList() {
-            var xmlhttp = new XMLHttpRequest();
-            xmlhttp.overrideMimeType("application/json");
-            xmlhttp.onreadystatechange = function () {
-                if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
-                    data = JSON.parse(xmlhttp.responseText);
-                }
-            };
-            xmlhttp.open("GET", "../Resources/search-list.json", true);
-            xmlhttp.send();
-            console.log(data);
-
-        }
-
-    </script>
 </head>
 </html>
 <style>
 </style>
-<body onload="getList();">
+<body>
 <nav class="navbar navbar-inverse">
     <div class="container-fluid">
         <div class="navbar-header">
@@ -74,7 +30,7 @@
         </div>
         <ul class="nav navbar-nav">
             <li class="active">
-                <a href="#">
+                <a href="./home.php">
                     Home
                 </a>
             </li>

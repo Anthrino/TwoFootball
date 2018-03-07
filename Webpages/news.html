@@ -1,52 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>News</title>
-    <script>if (typeof (fg_widgets) === "undefined") fg_widgets = new Array();
-    fg_widgets.push("fgid_f78030a99c67a90893df7f37b");</script>
-    <script async src="https://www.feedgrabbr.com/widget/fgwidget.js"></script>
-</head>
-<body>
-<nav class="navbar navbar-inverse">
-    <div class="container-fluid">
-        <div class="navbar-header">
-            <a class="navbar-brand" href="" style="display: inline; background-color: darkgreen; color: whitesmoke">
-                <img src="../Images/icon.png" style="display: inline; padding: 1%" height="20" width="20"/>
-                TwoFootball
-            </a>
+    <head>
+        <meta charset="utf-8">
+            <title>
+                News
+            </title>
+            <link href="../Images/icon.png" rel="shortcut icon"/>
+            <link href="../Resources/style.css" rel="stylesheet" type="text/css"/>
+            <script src="../Resources/search-engine.js">
+            </script>
+            <meta charset="utf-8"/>
+            <meta content="width=device-width, initial-scale=1" name="viewport"/>
+            <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"/>
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js">
+            </script>
+            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js">
+            </script>
+            <script>
+                if (typeof (fg_widgets) === "undefined") fg_widgets = new Array();
+    fg_widgets.push("fgid_f78030a99c67a90893df7f37b");
+            </script>
+            <script async="" src="https://www.feedgrabbr.com/widget/fgwidget.js">
+            </script>
+        </meta>
+    </head>
+    <body>
+        <nav class="navbar navbar-inverse">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="" style="display: inline; background-color: darkgreen; color: whitesmoke">
+                        <img height="20" src="../Images/icon.png" style="display: inline; padding: 1%" width="20"/>
+                        TwoFootball
+                    </a>
+                </div>
+                <ul class="nav navbar-nav">
+                    <li class="active">
+                        <a href="./home.php">
+                            Home
+                        </a>
+                    </li>
+                    <li>
+                        <a href="./transfers.html">
+                            Transfers
+                        </a>
+                    </li>
+                    <li>
+                        <a href="./news.html">
+                            News
+                        </a>
+                    </li>
+                    <li>
+                        <a href="videos.html">
+                            Upcoming Fixtures
+                        </a>
+                    </li>
+                </ul>
+                <div class="navbar-form navbar-right has-feedback">
+                    <input class="form-control dropdown-toggle" data-toggle="dropdown" id="search-field" onkeyup="filter(this.value)" placeholder="Search for clubs, players.." type="text">
+                        <i class="glyphicon glyphicon-search form-control-feedback" style="margin-right: 10%; ">
+                        </i>
+                        <ul aria-labelledby="search-field" class="dropdown-menu" id="dropmenu">
+                        </ul>
+                    </input>
+                </div>
+            </div>
+        </nav>
+        <div class="feedgrabbr_widget" id="fgid_f78030a99c67a90893df7f37b">
         </div>
-        <ul class="nav navbar-nav">
-            <li class="active">
-                <a href="#">
-                    Home
-                </a>
-            </li>
-            <li>
-                <a href="./transfers.html">
-                    Transfers
-                </a>
-            </li>
-            <li>
-                <a href="./news.html">
-                    News
-                </a>
-            </li>
-            <li>
-                <a href="videos.html">
-                    Upcoming Fixtures
-                </a>
-            </li>
-        </ul>
-        <div class="navbar-form navbar-right has-feedback">
-            <input class="form-control dropdown-toggle" placeholder="Search for clubs, players.."
-                   type="text" onkeyup="filter(this.value)" id="search-field" data-toggle="dropdown">
-            <i class="glyphicon glyphicon-search form-control-feedback" style="margin-right: 10%; "></i>
-            <ul class="dropdown-menu" aria-labelledby="search-field" id="dropmenu">
-            </ul>
-        </div>
-    </div>
-</nav>
-<div class="feedgrabbr_widget" id="fgid_f78030a99c67a90893df7f37b"></div>
-</body>
+    </body>
 </html>
