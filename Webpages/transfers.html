@@ -21,6 +21,23 @@
                 </script>
             </meta>
         </meta>
+        <style type="text/css">
+            #icon_container {
+    text-align: justify;    
+
+}
+
+div img {
+    display: inline-block;
+    
+}
+
+div:after {
+    content: '';
+    display: inline-block;
+    width: 100%;
+}
+        </style>
     </head>
 </html>
 <body>
@@ -64,44 +81,70 @@
             </div>
         </div>
     </nav>
-    <?php
-$servername = "remote-rds.cks1ufcqz3ra.us-west-2.rds.amazonaws.com";
-$username = "admin";
-$password = "8characters";
-
-// Create connection
-$conn = new mysqli($servername, $username, $password);
-
-// Check connection
-if ($conn->
-    connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-} 
-echo "Connected successfully";
-?>
     <div class="w3-container">
         <h2>
-            Card Content
+            Latest Transfer Roundup
         </h2>
-        <p>
-            Add containers inside the card to create different sections:
-        </p>
-        <div class="w3-card-4" style="width:50%;">
+        <center>
+        <div class="w3-card-4" style="width:75%">
             <header class="w3-container w3-blue">
                 <h1>
-                    Header
+                    Manchester United chase Bayern Munich striker Robert Lewandowski
                 </h1>
             </header>
             <div class="w3-container">
                 <p>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                    <a href = "https://www.manchestereveningnews.co.uk/sport/football/transfer-news/man-utd-transfer-news-lewandowski-14401605">
+                    <img src = "/home/mit/Desktop/TwoFootball/Images/robert.jpg" height = "25%" width = "25%">
+                </a>
+
                 </p>
             </div>
             <footer class="w3-container w3-blue">
-                <h5>
-                    Footer
-                </h5>
+                <center>
+                    <div calss = "icon_container" >
+                        <img src="/home/mit/Desktop/TwoFootball/Images/BM.svg" alt ="" width = "10%" height = "10%" /> 
+                        <img src="/home/mit/Desktop/TwoFootball/Images/transfer.png" alt="" width = "10%" height = "10%" />
+                        <img src="/home/mit/Desktop/TwoFootball/Images/MU.png" alt="" width = "10%" height = "10%" />
+                    </div>
+                </center>   
+
+
+                
+
             </footer>
         </div>
+        </center>
+
+        <center>
+        <div class="w3-card-4" style="width:75%">
+            <header class="w3-container w3-blue">
+                <h1>
+                    Madrid want Salah as Bale replacement
+                </h1>
+            </header>
+            <div class="w3-container">
+                <p>
+                    <a href = "http://www.goal.com/en-in/news/transfer-news-rumours-live-griezmann-refuses-new-atleti-deal/ji53uwwwe8vj1na2y04tq32wo">
+                    <img src = "/home/mit/Desktop/TwoFootball/Images/MoSalah.jpg" height = "25%" width = "25%">
+                </a>
+
+                </p>
+            </div>
+            <footer class="w3-container w3-blue">
+                <center>
+                    <div calss = "icon_container" >
+                        <img src="/home/mit/Desktop/TwoFootball/Images/BM.svg" alt ="" width = "10%" height = "10%" /> 
+                        <img src="/home/mit/Desktop/TwoFootball/Images/transfer.png" alt="" width = "10%" height = "10%" />
+                        <img src="/home/mit/Desktop/TwoFootball/Images/MU.png" alt="" width = "10%" height = "10%" />
+                    </div>
+                </center>   
+
+
+                
+
+            </footer>
+        </div>
+        </center>
     </div>
 </body>
