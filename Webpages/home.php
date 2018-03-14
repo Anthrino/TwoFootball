@@ -35,7 +35,7 @@
                 </a>
             </li>
             <li>
-                <a href="./transfers.html">
+                <a href="./transfers.php">
                     Transfers
                 </a>
             </li>
